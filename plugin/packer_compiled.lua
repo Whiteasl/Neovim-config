@@ -125,6 +125,12 @@ _G.packer_plugins = {
     path = "/home/Whiteasl/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
+  ["nvim-autopairs"] = {
+    config = { "\27LJ\2\n•\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21disable_filetype\1\0\3\vmap_cr\2\21disable_filetype\0\vmap_bs\2\1\3\0\0\19TelescopPrompt\bvim\nsetup\19nvim-autopairs\frequire\0" },
+    loaded = true,
+    path = "/home/Whiteasl/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/Whiteasl/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -141,7 +147,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
-    config = { "\27LJ\2\n³\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\2B\0\2\1K\0\1\0\15filesystem\24follow_current_file\1\0\2\27use_libuv_file_watcher\2\24follow_current_file\0\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\4\25close_if_last_window\2\21ensure_installed\0\15filesystem\0\14highlight\0\1\2\0\0\bvim\nsetup\28nvim-treesitter.configs\frequire\0" },
+    config = { "\27LJ\2\n³\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\2B\0\2\1K\0\1\0\15filesystem\24follow_current_file\1\0\2\24follow_current_file\0\27use_libuv_file_watcher\2\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\4\21ensure_installed\0\15filesystem\0\25close_if_last_window\2\14highlight\0\1\2\0\0\bvim\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = true,
     path = "/home/Whiteasl/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -177,8 +183,12 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\n³\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\2B\0\2\1K\0\1\0\15filesystem\24follow_current_file\1\0\2\27use_libuv_file_watcher\2\24follow_current_file\0\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\4\25close_if_last_window\2\21ensure_installed\0\15filesystem\0\14highlight\0\1\2\0\0\bvim\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
+try_loadstring("\27LJ\2\n³\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\2B\0\2\1K\0\1\0\15filesystem\24follow_current_file\1\0\2\24follow_current_file\0\27use_libuv_file_watcher\2\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\4\21ensure_installed\0\15filesystem\0\25close_if_last_window\2\14highlight\0\1\2\0\0\bvim\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n•\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21disable_filetype\1\0\3\vmap_cr\2\21disable_filetype\0\vmap_bs\2\1\3\0\0\19TelescopPrompt\bvim\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\nc\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\1\0\1\ntheme\tauto\nsetup\flualine\frequire\0", "config", "lualine.nvim")

@@ -73,14 +73,24 @@ return require('packer').startup(function(use)
       'neovim/nvim-lspconfig',      -- 官方 LSP 客户端
       'williamboman/mason-lspconfig.nvim',  -- 自动把商店中装好的服务器接到 lspconfig
 
-      config = function()
-          require('mason').setup()  -- 初始化商店页面
-          require('mason-lspconfig').setup {
-              ensure_installed = { 'lua_ls', 'pyright', 'clangd'},
+--      config = function()
+--          require('mason').setup()  -- 初始化商店页面
+--          require('mason-lspconfig').setup {
+--              ensure_installed = { 'lua_ls', 'pyright', 'clangd'},
+--          }
+  }
+  -- 结束
+  -- 括号补全
+  use {
+      'windwp/nvim-autopairs',
+      config = function ()
+          require('nvim-autopairs').setup {
+              disable_filetype = { 'TelescopPrompt', 'vim' },   -- 黑名单
+              map_cr = true,                                    -- 回车自动补全括号
+              map_bs = true,                                    -- Backspace 自动删除括号
           }
       end
   }
-  -- 结束
 
   -- 补全四件套：让 LSP 的提示能“弹出来”+“选中即插入”
   use {

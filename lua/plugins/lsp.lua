@@ -2,7 +2,7 @@
 -- -----------------------------------
 -- 公共回调：每个服务器都会跑这段代码
 require('mason').setup()
-require('mason-lspconfig').setup { enable_installed = { 'lua_ls', 'clangd', 'pyright', 'codebook' } }
+require('mason-lspconfig').setup({ automatic_setup = false })
 -- 定义公共能力
 local capabilities =
 require('cmp_nvim_lsp').default_capabilities()
@@ -24,6 +24,21 @@ end
 
 local lsp = vim.lsp
 
+-- 定义 nvim_lsp 的来源
+local cmp = require('cmp')
+cmp.setup {
+    mapping = cmp.mapping.preset.insert {
+        ['<CR>'] = cmp.mapping.confirm { select = true },       -- 回车选中
+        ['<C-Space>'] = cmp.mapping.complete(),                 -- 手动触发，注释则取消功能
+        ['<TAP>'] = cmp.mapping.select_next_item(),             -- TAP 用来进行上下选择
+    },
+    sources = cmp.config.sources(
+        { { name = 'nvim_lsp' }, { name = 'luasnip' } },        -- 优先使用 LSP
+        { { name = 'buffer' }, {name = 'path' } }               -- 候补选项 （输入过的文本等）
+    ),
+}
+
+
 -- Lua
 lsp.config('lua_ls', {
     capabilities = capabilities,
@@ -44,8 +59,7 @@ lsp.config('pyright', {
     on_attach = on_attach,
     settings = {
         python = {
-            pythonPath = '.venv/bin/python',
-            venvPath = '.venv',
+            pythonPath = vim.fn.exepath('python3'),
         },
     },
 })
@@ -55,6 +69,7 @@ lsp.config('clangd', {
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = { 'clangd', '--background-index', '--clang-tidy' },
+    root_dir = vim.fs.root(0, { '.git', 'compile_commands.json', 'Makefile' }) or vim.fn.getcwd(),
 })
 
 -- 启动

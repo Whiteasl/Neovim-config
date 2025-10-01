@@ -38,7 +38,7 @@ opt.signcolumn = 'yes'
 vim.cmd[[colorscheme tokyonight-night]]     -- 主题可选：night,day,moon,storm
 
 -- 插件
-require('lspconfig').lua_ls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
+--require('lspconfig').lua_ls.setup {
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--}
