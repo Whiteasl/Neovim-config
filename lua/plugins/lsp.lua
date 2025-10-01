@@ -30,7 +30,8 @@ cmp.setup {
     mapping = cmp.mapping.preset.insert {
         ['<CR>'] = cmp.mapping.confirm { select = true },       -- 回车选中
         ['<C-Space>'] = cmp.mapping.complete(),                 -- 手动触发，注释则取消功能
-        ['<TAP>'] = cmp.mapping.select_next_item(),             -- TAP 用来进行上下选择
+        ['<Tap>'] = cmp.mapping.select_next_item(),             -- TAP 用来进行上下选择
+        ['<S-Tap>'] = cmp.mapping.select_prev_item(),
     },
     sources = cmp.config.sources(
         { { name = 'nvim_lsp' }, { name = 'luasnip' } },        -- 优先使用 LSP
