@@ -28,7 +28,7 @@ local lsp = vim.lsp
 local cmp = require('cmp')
 cmp.setup {
     mapping = cmp.mapping.preset.insert {
-        ['<CR>'] = cmp.mapping.confirm { select = true },       -- 回车选中
+        ['<CR>'] = cmp.mapping.confirm { select = false },       -- 回车选中
         ['<C-Space>'] = cmp.mapping.complete(),                 -- 手动触发，注释则取消功能
         ['<Tap>'] = cmp.mapping.select_next_item(),             -- TAP 用来进行上下选择
         ['<S-Tap>'] = cmp.mapping.select_prev_item(),
